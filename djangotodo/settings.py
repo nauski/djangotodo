@@ -25,7 +25,7 @@ SECRET_KEY = '29k(h=(ml^1i0*g6bll#ehs1@d%*vlfgnbjzrs(9qveu6i0&yd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['80.69.167.178', 'dev.nauski.fi']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'todos.apps.TodosConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'djangotodo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangotodo',
+        'USER': 'djangotodo',
+        'PASSWORD': 'DnhFsFHA',
+        'HOST': '192.168.122.14',
+        'PORT': '',
     }
 }
 
